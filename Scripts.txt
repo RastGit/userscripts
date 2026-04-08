@@ -1,0 +1,17 @@
+1
+{
+Name: ExampleScript
+Link: https://raw.githubusercontent.com/example/scripts/main/example.user.js
+Icon: https://raw.githubusercontent.com/github/explore/main/topics/javascript/javascript.png
+Desc: Przykładowy skrypt demonstracyjny. Zastąp swoim własnym.
+Tag: userscript
+}
+
+2
+{
+Name: MójDrugiSkrypt
+Link: https://raw.githubusercontent.com/example/scripts/main/drugi.user.js
+Icon: https://raw.githubusercontent.com/github/explore/main/topics/typescript/typescript.png
+Desc: Kolejny przykładowy skrypt. Edytuj ten plik i dodaj swoje.
+Tag: utility
+}
