@@ -9,10 +9,10 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#0a0a0f;--bg2:#0f0f18;--bg3:#13131f;
-  --surface:#16162a;--surface2:#1c1c33;
+  --bg:#0a0a0f;--bg2:#0f0f18;
+  --surface:#16162a;
   --border:rgba(120,80,255,0.15);--border2:rgba(120,80,255,0.3);
-  --purple:#7c3aed;--purple2:#9d6fff;--purple3:#c4a3ff;
+  --purple:#7c3aed;--purple3:#c4a3ff;
   --neon:#a855f7;--neon2:#c084fc;
   --text:#f0eeff;--text2:#a89cc8;--text3:#6b5f8a;
   --font:'Inter',sans-serif;--mono:'JetBrains Mono',monospace;
@@ -25,7 +25,6 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .b2{width:450px;height:450px;background:rgba(168,85,247,.07);bottom:10%;left:-150px}
 .b3{width:350px;height:350px;background:rgba(59,7,100,.14);top:45%;left:38%}
 
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,15,.75);backdrop-filter:blur(24px) saturate(1.6);-webkit-backdrop-filter:blur(24px) saturate(1.6);border-bottom:1px solid var(--border)}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
 .logo-mark{width:34px;height:34px;background:linear-gradient(135deg,#7c3aed,#a855f7);border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;color:#fff;box-shadow:0 0 18px rgba(124,58,237,.55);position:relative;overflow:hidden}
@@ -38,7 +37,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 2rem;height:64px;d
 .nav-tab.active{background:linear-gradient(135deg,rgba(124,58,237,.4),rgba(168,85,247,.28));color:var(--purple3);box-shadow:0 0 14px rgba(124,58,237,.2),inset 0 1px 0 rgba(255,255,255,.1)}
 .nav-badge{font-size:12px;color:var(--text3);font-family:var(--mono)}
 
-/* HERO */
 .hero{position:relative;z-index:1;padding:160px 2rem 100px;text-align:center;max-width:900px;margin:0 auto}
 .hero-tag{display:inline-flex;align-items:center;gap:7px;padding:5px 15px;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.25);border-radius:100px;font-size:12px;font-weight:500;color:var(--purple3);margin-bottom:28px;letter-spacing:.5px;text-transform:uppercase}
 .hero-tag::before{content:'';width:6px;height:6px;background:var(--neon);border-radius:50%;box-shadow:0 0 7px var(--neon);animation:pulse 2s ease-in-out infinite}
@@ -50,29 +48,24 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 2rem;height:64px;d
 .stat-num{font-size:34px;font-weight:700;color:var(--purple3);display:block}
 .stat-label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:1.2px;margin-top:4px}
 
-/* SECTION */
 section{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:0 2rem 80px}
 .section-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:32px}
 .section-title{font-size:22px;font-weight:600;letter-spacing:-.5px}
 .section-count{font-size:13px;color:var(--text3);font-family:var(--mono)}
 
-/* SEARCH */
 .search-wrap{position:relative;margin-bottom:28px}
 .si{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--text3);pointer-events:none;display:flex}
 .search-input{width:100%;padding:13px 16px 13px 44px;background:var(--surface);border:1px solid var(--border);border-radius:12px;color:var(--text);font-size:14px;font-family:var(--font);outline:none;transition:border .2s,box-shadow .2s}
 .search-input::placeholder{color:var(--text3)}
 .search-input:focus{border-color:var(--border2);box-shadow:0 0 0 3px rgba(124,58,237,.12)}
 
-/* CHIPS */
 .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
 .chip{padding:6px 15px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:100px;font-size:12px;font-weight:500;color:var(--text2);cursor:pointer;transition:all .2s;font-family:var(--font)}
 .chip:hover{border-color:var(--border2);color:var(--purple3)}
 .chip.active{background:rgba(124,58,237,.15);border-color:rgba(124,58,237,.4);color:var(--purple3);box-shadow:0 0 12px rgba(124,58,237,.15)}
 
-/* GRID */
 .scripts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:16px}
 
-/* CARD */
 .script-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden}
 .script-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(124,58,237,.05),transparent 60%);opacity:0;transition:opacity .3s}
 .script-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(168,85,247,.5),transparent);opacity:0;transition:opacity .3s}
@@ -88,11 +81,10 @@ section{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:0 2re
 .card-name{font-size:16px;font-weight:600;color:var(--text);margin-bottom:6px;letter-spacing:-.3px}
 .card-desc{font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:20px}
 .card-meta{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--border)}
-.card-link{font-size:12px;color:var(--text3);font-family:var(--mono);display:flex;align-items:center;gap:5px}
-.btn-primary{padding:6px 14px;background:linear-gradient(135deg,rgba(124,58,237,.6),rgba(168,85,247,.48));border:1px solid rgba(124,58,237,.4);border-radius:8px;font-size:12px;font-weight:600;color:#e9d5ff;cursor:pointer;transition:all .2s;font-family:var(--font);display:flex;align-items:center;gap:5px;box-shadow:0 0 12px rgba(124,58,237,.2)}
+.card-link{font-size:12px;color:var(--text3);font-family:var(--mono);display:flex;align-items:center;gap:5px;max-width:55%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.btn-primary{padding:7px 14px;background:linear-gradient(135deg,rgba(124,58,237,.6),rgba(168,85,247,.48));border:1px solid rgba(124,58,237,.4);border-radius:8px;font-size:12px;font-weight:600;color:#e9d5ff;cursor:pointer;transition:all .2s;font-family:var(--font);display:flex;align-items:center;gap:5px;box-shadow:0 0 12px rgba(124,58,237,.2);white-space:nowrap}
 .btn-primary:hover{box-shadow:0 0 22px rgba(124,58,237,.4);transform:translateY(-1px)}
 
-/* MARQUEE */
 .mq-section{position:relative;z-index:1;padding:0 0 80px;overflow:hidden}
 .mq-label{text-align:center;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--text3);margin-bottom:28px}
 .mq-wrap{display:flex;overflow:hidden;mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent)}
@@ -104,13 +96,23 @@ section{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:0 2re
 .mq-icon img{width:16px;height:16px;border-radius:3px;object-fit:contain}
 .mq-name{font-size:13px;font-weight:500;color:var(--text2)}
 
-/* FOOTER */
 footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:48px 2rem;text-align:center}
 .footer-logo{font-size:26px;font-weight:900;letter-spacing:-1px;margin-bottom:12px;background:linear-gradient(135deg,#f0eeff,#9d6fff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .footer-text{font-size:13px;color:var(--text3);margin-bottom:24px}
 .footer-links{display:flex;justify-content:center;gap:28px;flex-wrap:wrap}
 .footer-link{font-size:13px;color:var(--text3);text-decoration:none;transition:color .2s}
 .footer-link:hover{color:var(--purple3)}
+
+/* LOADING */
+.loading-state{grid-column:1/-1;display:flex;flex-direction:column;align-items:center;padding:80px 20px;gap:16px;color:var(--text3)}
+.loader{width:32px;height:32px;border:2px solid var(--border);border-top-color:var(--purple);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.error-state{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--text3)}
+.error-box{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.2);border-radius:12px;padding:20px;max-width:500px;margin:0 auto}
+.error-box strong{color:#fca5a5;display:block;margin-bottom:8px;font-size:15px}
+.error-box p{font-size:13px;line-height:1.6}
+.empty-state{grid-column:1/-1;text-align:center;padding:80px 20px;color:var(--text3)}
+.empty-state p{font-size:15px;margin-top:16px}
 
 /* MODAL */
 .modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(5,5,10,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .25s}
@@ -123,8 +125,8 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:48
 .modal-icon{width:44px;height:44px;border-radius:11px;background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.25);display:flex;align-items:center;justify-content:center;font-size:21px;overflow:hidden}
 .modal-icon img{width:27px;height:27px;border-radius:5px;object-fit:contain}
 .modal-name{font-size:18px;font-weight:600;letter-spacing:-.4px}
-.modal-sub{font-size:12px;color:var(--text3);font-family:var(--mono);margin-top:2px}
-.modal-close{width:32px;height:32px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text2);font-size:16px;transition:all .2s}
+.modal-sub{font-size:12px;color:var(--text3);font-family:var(--mono);margin-top:2px;word-break:break-all}
+.modal-close{width:32px;height:32px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text2);font-size:16px;transition:all .2s;flex-shrink:0}
 .modal-close:hover{background:rgba(255,255,255,.09);color:var(--text)}
 .modal-body{padding:24px}
 .modal-tabs{display:flex;gap:2px;background:rgba(255,255,255,.03);border-radius:10px;padding:3px;border:1px solid var(--border);margin-bottom:20px}
@@ -142,25 +144,24 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:48
 .btn-copy.copied{border-color:rgba(34,197,94,.3);color:#86efac;background:rgba(34,197,94,.05)}
 .btn-install{flex:2;padding:11px;background:linear-gradient(135deg,rgba(124,58,237,.58),rgba(168,85,247,.46));border:1px solid rgba(124,58,237,.42);border-radius:10px;font-size:14px;font-weight:600;color:#e9d5ff;cursor:pointer;transition:all .2s;font-family:var(--font);display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 0 22px rgba(124,58,237,.22)}
 .btn-install:hover{box-shadow:0 0 36px rgba(124,58,237,.42);transform:translateY(-1px)}
-.install-note{margin-top:14px;padding:12px 16px;background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.13);border-radius:10px;font-size:12px;color:var(--text3);line-height:1.65}
-.install-note strong{color:var(--purple3);font-weight:500}
-.empty-state{grid-column:1/-1;text-align:center;padding:80px 20px;color:var(--text3)}
-.empty-state p{font-size:15px;margin-top:16px}
+.install-note{margin-top:14px;padding:14px 16px;background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.13);border-radius:10px;font-size:13px;color:var(--text2);line-height:1.7}
+.install-note strong{color:var(--purple3);font-weight:600}
+.managers{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.manager-badge{padding:4px 10px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:6px;font-size:11px;color:var(--text3);font-weight:500}
 
-/* ABOUT/DOCS */
+/* ABOUT */
 .prose h2{font-size:28px;font-weight:700;margin-bottom:20px;letter-spacing:-.5px}
 .prose p{color:var(--text2);line-height:1.8;margin-bottom:18px}
 .prose code{background:var(--surface);padding:2px 8px;border-radius:5px;font-family:var(--mono);font-size:13px;color:var(--purple3)}
 .step-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px 24px;display:flex;gap:16px;align-items:flex-start;margin-bottom:14px}
-.step-num{width:28px;height:28px;background:rgba(124,58,237,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--purple3);flex-shrink:0}
+.step-num{width:28px;height:28px;min-width:28px;background:rgba(124,58,237,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--purple3)}
 .step-title{font-weight:600;margin-bottom:5px}
-.step-desc{font-size:13px;color:var(--text2)}
+.step-desc{font-size:13px;color:var(--text2);line-height:1.6}
 .step-desc strong{color:var(--purple3);font-weight:500}
 
 ::-webkit-scrollbar{width:5px;height:5px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:rgba(124,58,237,.3);border-radius:3px}
-::-webkit-scrollbar-thumb:hover{background:rgba(124,58,237,.5)}
 
 @media(max-width:640px){.nav-tabs{display:none}.hero h1{letter-spacing:-2px}.hero-stats{gap:24px}.scripts-grid{grid-template-columns:1fr}}
 </style>
@@ -181,7 +182,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:48
     <button class="nav-tab" onclick="setTab('about',this)">About</button>
     <button class="nav-tab" onclick="setTab('docs',this)">Docs</button>
   </div>
-  <span class="nav-badge" id="total-count">0 scripts</span>
+  <span class="nav-badge" id="total-count">ładowanie...</span>
 </nav>
 
 <div class="hero">
@@ -189,7 +190,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:48
   <h1>RastHub</h1>
   <p>Kolekcja userscriptów i narzędzi. Instaluj jednym kliknięciem, używaj od razu.</p>
   <div class="hero-stats">
-    <div class="stat"><span class="stat-num" id="stat-n">0</span><span class="stat-label">Skryptów</span></div>
+    <div class="stat"><span class="stat-num" id="stat-n">—</span><span class="stat-label">Skryptów</span></div>
     <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Możliwości</span></div>
     <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Open Source</span></div>
   </div>
@@ -205,29 +206,50 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:48
     <input class="search-input" id="search" type="text" placeholder="Szukaj skryptów..." oninput="render()">
   </div>
   <div class="filters" id="chips"></div>
-  <div class="scripts-grid" id="grid"></div>
+  <div class="scripts-grid" id="grid">
+    <div class="loading-state"><div class="loader"></div><span>Ładowanie skryptów z SCRIPTS.txt...</span></div>
+  </div>
 </section>
 
 <section id="sec-about" style="display:none">
-  <div class="prose" style="max-width:640px">
-    <h2>Co to jest RastHub?</h2>
-    <p>RastHub to osobista biblioteka skryptów i userscriptów. Każdy skrypt jest hostowany na GitHubie i można go zainstalować jednym kliknięciem przez Tampermonkey lub Greasemonkey.</p>
-    <p>Żeby dodać nowy skrypt — edytuj <code>index.html</code> i wrzuć wpis do tablicy <code>scripts</code> na dole pliku w formacie komentarza.</p>
-    <div class="code-block"><span class="cm">// Skrypty //</span>
-<span class="kw">Link</span>: https://raw.githubusercontent.com/user/repo/main/script.user.js
+  <div class="prose" style="max-width:660px">
+    <h2>Jak dodać skrypt?</h2>
+    <p>Edytuj plik <code>SCRIPTS.txt</code> w tym samym repozytorium. Strona automatycznie pobiera go i wyświetla skrypty.</p>
+    <p>Format wpisu w <code>SCRIPTS.txt</code>:</p>
+    <div class="code-block"><span class="kw">1</span>
+<span class="cm">{</span>
 <span class="kw">Name</span>: NazwaSkryptu
-<span class="kw">Icon</span>: https://github.com/user/icon.png
-<span class="kw">Desc</span>: Krótki opis tego co skrypt robi
-<span class="kw">Tag</span>: userscript</div>
+<span class="kw">Link</span>: https://raw.githubusercontent.com/USER/REPO/main/skrypt.user.js
+<span class="kw">Icon</span>: https://raw.githubusercontent.com/USER/REPO/main/icon.png
+<span class="kw">Desc</span>: Opis co robi skrypt
+<span class="kw">Tag</span>: userscript
+<span class="cm">}</span>
+
+<span class="kw">2</span>
+<span class="cm">{</span>
+<span class="kw">Name</span>: DrugiSkrypt
+<span class="kw">Link</span>: https://raw.githubusercontent.com/USER/REPO/main/drugi.user.js
+<span class="kw">Icon</span>: https://raw.githubusercontent.com/USER/REPO/main/icon2.png
+<span class="kw">Desc</span>: Opis drugiego skryptu
+<span class="kw">Tag</span>: utility
+<span class="cm">}</span></div>
+    <p style="margin-top:20px">Dostępne tagi: <code>userscript</code> &nbsp; <code>utility</code> &nbsp; <code>tool</code></p>
+    <p>Link musi wskazywać na plik <code>.user.js</code> na <code>raw.githubusercontent.com</code> — wtedy menedżery skryptów automatycznie go rozpoznają i zaproponują instalację.</p>
   </div>
 </section>
 
 <section id="sec-docs" style="display:none">
   <div style="max-width:640px">
-    <div class="prose"><h2>Jak zainstalować?</h2></div>
-    <div class="step-card"><div class="step-num">1</div><div><div class="step-title">Zainstaluj menedżer skryptów</div><div class="step-desc">Pobierz <strong>Tampermonkey</strong> lub <strong>Greasemonkey</strong> dla swojej przeglądarki ze sklepu z rozszerzeniami.</div></div></div>
-    <div class="step-card"><div class="step-num">2</div><div><div class="step-title">Kliknij "Zainstaluj"</div><div class="step-desc">Na karcie każdego skryptu kliknij przycisk <strong>Zainstaluj Skrypt</strong> — otworzy się dialog potwierdzenia.</div></div></div>
-    <div class="step-card"><div class="step-num">3</div><div><div class="step-title">Gotowe!</div><div class="step-desc">Skrypt zainstaluje się automatycznie. Odśwież stronę docelową żeby zobaczyć efekty.</div></div></div>
+    <div class="prose"><h2>Jak zainstalować skrypt?</h2>
+    <p>Potrzebujesz jednego z tych rozszerzeń do przeglądarki:</p></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px">
+      <a href="https://www.tampermonkey.net/" target="_blank" style="padding:10px 18px;background:var(--surface);border:1px solid var(--border);border-radius:10px;text-decoration:none;color:var(--text2);font-size:13px;font-weight:500;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(120,80,255,.4)'" onmouseout="this.style.borderColor='rgba(120,80,255,.15)'">🐵 Tampermonkey</a>
+      <a href="https://violentmonkey.github.io/" target="_blank" style="padding:10px 18px;background:var(--surface);border:1px solid var(--border);border-radius:10px;text-decoration:none;color:var(--text2);font-size:13px;font-weight:500;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(120,80,255,.4)'" onmouseout="this.style.borderColor='rgba(120,80,255,.15)'">⚡ ViolentMonkey</a>
+      <a href="https://www.greasespot.net/" target="_blank" style="padding:10px 18px;background:var(--surface);border:1px solid var(--border);border-radius:10px;text-decoration:none;color:var(--text2);font-size:13px;font-weight:500;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(120,80,255,.4)'" onmouseout="this.style.borderColor='rgba(120,80,255,.15)'">🔧 Greasemonkey</a>
+    </div>
+    <div class="step-card"><div class="step-num">1</div><div><div class="step-title">Zainstaluj rozszerzenie</div><div class="step-desc">Pobierz <strong>Tampermonkey</strong>, <strong>ViolentMonkey</strong> lub <strong>Greasemonkey</strong> ze sklepu swojej przeglądarki. Wszystkie działają tak samo.</div></div></div>
+    <div class="step-card"><div class="step-num">2</div><div><div class="step-title">Kliknij "Zainstaluj Skrypt"</div><div class="step-desc">Na karcie każdego skryptu kliknij fioletowy przycisk. Otworzy się nowa karta z podglądem kodu — kliknij tam <strong>Zainstaluj</strong>.</div></div></div>
+    <div class="step-card"><div class="step-num">3</div><div><div class="step-title">Gotowe — odśwież stronę</div><div class="step-desc">Skrypt zainstaluje się i automatycznie uruchomi na odpowiednich stronach. Odśwież stronę docelową.</div></div></div>
   </div>
 </section>
 
@@ -242,8 +264,8 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:48
   <div class="footer-links">
     <a href="#" class="footer-link">GitHub</a>
     <a href="#" class="footer-link">Skrypty</a>
-    <a href="#" class="footer-link">Docs</a>
-    <a href="#" class="footer-link">O projekcie</a>
+    <a href="#" class="footer-link" onclick="setTab('docs',document.querySelectorAll('.nav-tab')[2]);return false">Docs</a>
+    <a href="#" class="footer-link" onclick="setTab('about',document.querySelectorAll('.nav-tab')[1]);return false">O projekcie</a>
   </div>
 </footer>
 
@@ -253,14 +275,17 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:48
     <div class="modal-head">
       <div class="modal-tg">
         <div class="modal-icon" id="m-icon">📜</div>
-        <div><div class="modal-name" id="m-name">Script</div><div class="modal-sub" id="m-link">github.com/...</div></div>
+        <div>
+          <div class="modal-name" id="m-name">Script</div>
+          <div class="modal-sub" id="m-link">github.com/...</div>
+        </div>
       </div>
       <button class="modal-close" onclick="closeModal()">✕</button>
     </div>
     <div class="modal-body">
       <div class="modal-tabs">
         <button class="modal-tab active" onclick="mtab('install',this)">Instalacja</button>
-        <button class="modal-tab" onclick="mtab('code',this)">Kod instalacyjny</button>
+        <button class="modal-tab" onclick="mtab('code',this)">Kod źródłowy</button>
       </div>
       <div class="tab-content active" id="tab-install">
         <div class="modal-actions">
@@ -268,16 +293,27 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:48
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
             Kopiuj link
           </button>
-          <button class="btn-install" id="inst" onclick="inst()">
+          <button class="btn-install" id="inst-btn" onclick="inst()">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Zainstaluj Skrypt
           </button>
         </div>
-        <div class="install-note">Wymagany <strong>Tampermonkey</strong> lub <strong>Greasemonkey</strong>. Po kliknięciu "Zainstaluj" przeglądarka zapyta o potwierdzenie.</div>
+        <div class="install-note">
+          Kliknij <strong>Zainstaluj Skrypt</strong> — otworzy się strona z kodem. Twój menedżer skryptów (<strong>Tampermonkey</strong>, <strong>ViolentMonkey</strong>, Greasemonkey) automatycznie wykryje plik i zaproponuje instalację.
+          <div class="managers">
+            <span class="manager-badge">🐵 Tampermonkey</span>
+            <span class="manager-badge">⚡ ViolentMonkey</span>
+            <span class="manager-badge">🔧 Greasemonkey</span>
+          </div>
+        </div>
       </div>
       <div class="tab-content" id="tab-code">
-        <div class="code-block" id="m-code">// kod</div>
-        <div class="modal-actions">
+        <div id="code-loading" style="display:none;text-align:center;padding:40px;color:var(--text3)">
+          <div class="loader" style="margin:0 auto 12px"></div>
+          <span>Pobieranie kodu...</span>
+        </div>
+        <div class="code-block" id="m-code" style="display:none"></div>
+        <div class="modal-actions" id="code-actions" style="display:none">
           <button class="btn-copy" id="cp2" onclick="cp2()">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
             Kopiuj kod
@@ -290,50 +326,68 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:48
 
 <script>
 // ================================================================
-//  SKRYPTY — dodaj tutaj swoje skrypty
-//  Format komentarza (informacyjny):
-//  Link: URL_do_.user.js  Name: Nazwa  Icon: URL_ikony
-//  Desc: Opis  Tag: userscript | utility | tool
+//  Strona automatycznie pobiera skrypty z pliku SCRIPTS.txt
+//  w tym samym repozytorium. Nie musisz nic zmieniać tutaj.
+//  Edytuj tylko SCRIPTS.txt !
 // ================================================================
-const scripts = [
-  {
-    link: "https://raw.githubusercontent.com/example/scripts/main/example.user.js",
-    name: "ExampleScript",
-    icon: "https://raw.githubusercontent.com/github/explore/main/topics/javascript/javascript.png",
-    desc: "Przykładowy skrypt demonstracyjny. Zastąp swoim własnym skryptem edytując tablicę scripts.",
-    tag: "userscript"
+
+let scripts = [], activeTag = 'all', cur = null, codeCache = {};
+
+// Parser pliku SCRIPTS.txt
+function parseSCRIPTS(text) {
+  const result = [];
+  // Znajdź wszystkie bloki { ... }
+  const blocks = text.matchAll(/\d+\s*\{([^}]+)\}/g);
+  for (const match of blocks) {
+    const block = match[1];
+    const get = key => {
+      const m = block.match(new RegExp(key + ':\\s*(.+)', 'i'));
+      return m ? m[1].trim() : '';
+    };
+    const s = {
+      name: get('Name'),
+      link: get('Link'),
+      icon: get('Icon'),
+      desc: get('Desc'),
+      tag: get('Tag') || 'userscript'
+    };
+    if (s.name && s.link) result.push(s);
   }
-  // ---- DODAJ KOLEJNE SKRYPTY PONIŻEJ ----
-  // {
-  //   link: "https://raw.githubusercontent.com/TWOJ_USER/REPO/main/SKRYPT.user.js",
-  //   name: "NazwaSkryptu",
-  //   icon: "https://github.com/TWOJ_USER/IKONA.png",
-  //   desc: "Opis co robi skrypt",
-  //   tag: "userscript"
-  // },
-];
-// ================================================================
+  return result;
+}
 
-let activeTag = 'all', cur = null;
+async function loadScripts() {
+  try {
+    // Pobierz SCRIPTS.txt z tego samego miejsca co index.html
+    const url = new URL('SCRIPTS.txt', window.location.href).href;
+    const res = await fetch(url + '?v=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const text = await res.text();
+    scripts = parseSCRIPTS(text);
+    if (scripts.length === 0) throw new Error('Brak skryptów w pliku');
+    renderChips();
+    render();
+    renderMarquee();
+    updateStats();
+  } catch(e) {
+    document.getElementById('grid').innerHTML = `
+      <div class="error-state">
+        <div class="error-box">
+          <strong>Nie można załadować SCRIPTS.txt</strong>
+          <p>Upewnij się że plik <code style="background:rgba(255,255,255,.07);padding:1px 6px;border-radius:4px;font-family:monospace">SCRIPTS.txt</code> jest w tym samym folderze co <code style="background:rgba(255,255,255,.07);padding:1px 6px;border-radius:4px;font-family:monospace">index.html</code> w repozytorium.<br><br>Błąd: ${e.message}</p>
+        </div>
+      </div>`;
+    document.getElementById('total-count').textContent = 'błąd ładowania';
+  }
+}
 
-const ic = s => s.icon?.startsWith('http')
+const ic = s => s.icon && s.icon.startsWith('http')
   ? `<img src="${s.icon}" alt="${s.name}" onerror="this.style.display='none';this.parentElement.textContent='📜'">`
   : '📜';
 
-const installCode = s =>
-`// ==UserScript==
-// @name         ${s.name}
-// @namespace    rasthub
-// @version      1.0
-// @description  ${s.desc||''}
-// @match        *://*/*
-// @grant        none
-// ==/UserScript==
-// Instalacja: ${s.link}`;
-
 function getTags(){
   const t = new Set(['all']);
-  scripts.forEach(s=>s.tag&&t.add(s.tag));
+  scripts.forEach(s => s.tag && t.add(s.tag));
   return [...t];
 }
 
@@ -347,22 +401,22 @@ function setFilter(t){ activeTag=t; renderChips(); render(); }
 
 function filtered(){
   const q = document.getElementById('search').value.toLowerCase();
-  return scripts.filter(s=>{
-    const mt = activeTag==='all'||s.tag===activeTag;
-    const mq = !q||s.name.toLowerCase().includes(q)||(s.desc||'').toLowerCase().includes(q);
-    return mt&&mq;
+  return scripts.filter(s => {
+    const mt = activeTag==='all' || s.tag===activeTag;
+    const mq = !q || s.name.toLowerCase().includes(q) || (s.desc||'').toLowerCase().includes(q);
+    return mt && mq;
   });
 }
 
 function render(){
   const f = filtered();
-  document.getElementById('showing').textContent = f.length+' wyników';
+  document.getElementById('showing').textContent = f.length + ' wyników';
   const grid = document.getElementById('grid');
   if(!f.length){
     grid.innerHTML = `<div class="empty-state"><svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><p>Brak skryptów dla tego zapytania</p></div>`;
     return;
   }
-  grid.innerHTML = f.map(s=>{
+  grid.innerHTML = f.map(s => {
     const i = scripts.indexOf(s);
     const tc = s.tag==='tool'?'bt':s.tag==='utility'?'bg':'bu';
     const lnk = (s.link||'').replace(/https?:\/\//,'').split('/').slice(0,4).join('/');
@@ -374,43 +428,47 @@ function render(){
       <div class="card-name">${s.name}</div>
       <div class="card-desc">${s.desc||'Brak opisu.'}</div>
       <div class="card-meta">
-        <span class="card-link"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>${lnk}</span>
-        <button class="btn-primary" onclick="event.stopPropagation();openModal(${i})"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Instaluj</button>
+        <span class="card-link">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          ${lnk}
+        </span>
+        <button class="btn-primary" onclick="event.stopPropagation();openModal(${i})">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Instaluj
+        </button>
       </div>
     </div>`;
   }).join('');
 }
 
 function renderMarquee(){
-  const t = document.getElementById('mq-track');
-  const d = [...scripts,...scripts];
-  t.innerHTML = d.map((s,i)=>`
-    <div class="mq-item" onclick="openModal(${i%scripts.length})">
+  if(!scripts.length) return;
+  const d = [...scripts,...scripts,...scripts];
+  document.getElementById('mq-track').innerHTML = d.map((s,i) =>
+    `<div class="mq-item" onclick="openModal(${i%scripts.length})">
       <div class="mq-icon">${ic(s)}</div>
       <span class="mq-name">${s.name}</span>
     </div>`).join('');
 }
 
 function updateStats(){
-  const n=scripts.length;
-  document.getElementById('stat-n').textContent=n;
-  document.getElementById('total-count').textContent=`${n} skrypt${n===1?'':n<5?'y':'ów'}`;
+  const n = scripts.length;
+  document.getElementById('stat-n').textContent = n;
+  document.getElementById('total-count').textContent = `${n} skrypt${n===1?'':n<5?'y':'ów'}`;
 }
 
 function openModal(i){
-  const s=scripts[i]; if(!s) return; cur=s;
+  const s = scripts[i]; if(!s) return; cur = s;
   document.getElementById('m-icon').innerHTML = ic(s);
   document.getElementById('m-name').textContent = s.name;
-  document.getElementById('m-link').textContent = (s.link||'').replace(/https?:\/\//,'').split('/').slice(0,4).join('/');
-  const raw = installCode(s);
-  document.getElementById('m-code').innerHTML = raw
-    .replace(/\/\/ ==UserScript==/g,'<span class="cm">// ==UserScript==</span>')
-    .replace(/\/\/ ==/g,'<span class="cm">// ==</span>')
-    .replace(/@(\w+)/g,'<span class="kw">@$1</span>')
-    .replace(/(\/\/ Instalacja:.*)/g,'<span class="sv">$1</span>');
-  document.getElementById('inst').dataset.url = s.link||'';
+  document.getElementById('m-link').textContent = s.link;
+  // reset code tab
+  document.getElementById('m-code').style.display = 'none';
+  document.getElementById('m-code').textContent = '';
+  document.getElementById('code-loading').style.display = 'none';
+  document.getElementById('code-actions').style.display = 'none';
   document.getElementById('modal').classList.add('open');
-  document.body.style.overflow='hidden';
+  document.body.style.overflow = 'hidden';
   mtab('install', document.querySelector('.modal-tab'));
 }
 
@@ -422,39 +480,78 @@ function mtab(tab, btn){
   document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
   btn.classList.add('active');
   document.getElementById('tab-'+tab).classList.add('active');
+  if(tab==='code' && cur) loadCode(cur);
 }
 
-function inst(){ const u=document.getElementById('inst').dataset.url; if(u) window.open(u,'_blank'); }
+async function loadCode(s){
+  if(codeCache[s.link]){
+    showCode(codeCache[s.link]); return;
+  }
+  document.getElementById('code-loading').style.display = 'flex';
+  document.getElementById('m-code').style.display = 'none';
+  document.getElementById('code-actions').style.display = 'none';
+  try {
+    const res = await fetch(s.link);
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    const text = await res.text();
+    codeCache[s.link] = text;
+    showCode(text);
+  } catch(e){
+    document.getElementById('code-loading').innerHTML = `<span style="color:#fca5a5">Nie można pobrać kodu: ${e.message}</span>`;
+  }
+}
+
+function showCode(text){
+  document.getElementById('code-loading').style.display = 'none';
+  const el = document.getElementById('m-code');
+  // Pokoloruj nagłówek userscript
+  const html = text
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/(\/\/ ==UserScript==|\/\/ ==\/UserScript==)/g,'<span class="cm">$1</span>')
+    .replace(/(@\w+)/g,'<span class="kw">$1</span>')
+    .replace(/(\/\/.*)/g, m => m.startsWith('<') ? m : `<span class="cm">${m}</span>`);
+  el.innerHTML = html.slice(0,8000) + (text.length>8000?'\n\n... (plik przycięty dla wyświetlenia)':'');
+  el.style.display = 'block';
+  document.getElementById('code-actions').style.display = 'flex';
+}
+
+// INSTALL — otwiera raw link, Tampermonkey/ViolentMonkey/GM przechwytuje .user.js
+function inst(){
+  if(cur && cur.link) window.open(cur.link, '_blank');
+}
 
 function cp1(){
   if(!cur) return;
   navigator.clipboard.writeText(cur.link||'').then(()=>{
-    const b=document.getElementById('cp1');
+    const b = document.getElementById('cp1');
     b.classList.add('copied'); b.textContent='✓ Skopiowano!';
-    setTimeout(()=>{ b.classList.remove('copied'); b.innerHTML='<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Kopiuj link'; },2200);
+    setTimeout(()=>{ b.classList.remove('copied'); b.innerHTML='<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Kopiuj link'; }, 2200);
   });
 }
 
 function cp2(){
-  if(!cur) return;
-  navigator.clipboard.writeText(installCode(cur)).then(()=>{
-    const b=document.getElementById('cp2');
+  const code = codeCache[cur?.link];
+  if(!code) return;
+  navigator.clipboard.writeText(code).then(()=>{
+    const b = document.getElementById('cp2');
     b.classList.add('copied'); b.textContent='✓ Skopiowano!';
-    setTimeout(()=>{ b.classList.remove('copied'); b.innerHTML='<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Kopiuj kod'; },2200);
+    setTimeout(()=>{ b.classList.remove('copied'); b.innerHTML='<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Kopiuj kod'; }, 2200);
   });
 }
 
 function setTab(tab, btn){
   document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
   btn.classList.add('active');
-  ['scripts','about','docs'].forEach(s=>{
-    document.getElementById('sec-'+s).style.display = s===tab?'':'none';
+  ['scripts','about','docs'].forEach(s => {
+    document.getElementById('sec-'+s).style.display = s===tab ? '' : 'none';
   });
-  document.getElementById('mq-section').style.display = tab==='scripts'?'':'none';
+  document.getElementById('mq-section').style.display = tab==='scripts' ? '' : 'none';
 }
 
-renderChips(); render(); renderMarquee(); updateStats();
-document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+
+// START
+loadScripts();
 </script>
 </body>
 </html>
